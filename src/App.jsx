@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { decrement, increment, incrementBy } from './store/slices/counter'
 
 function App() {
-  const {counter} = useSelector(state => state.counter)
+  const {counter} = useSelector(state => state.counter);
   const dispatch = useDispatch();
 
   return (
