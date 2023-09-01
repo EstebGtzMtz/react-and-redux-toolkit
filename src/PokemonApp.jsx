@@ -5,12 +5,13 @@ import { getPokemons } from "./store/slices/pokemon";
 export const PokemonApp = () => {
 
   const dispatch = useDispatch();
-  const {isLoading, pokemons} = useSelector(state => state.pokemons);
-  console.log(isLoading, pokemons)
+  const {isLoading, pokemons, nextPage} = useSelector(state => state.pokemons);
+  console.log(isLoading, pokemons, nextPage)
 
   useEffect(() => {
     dispatch(getPokemons())
-  }, [dispatch])
+  }, [])
+
 
   return (
     <>
@@ -28,6 +29,10 @@ export const PokemonApp = () => {
           )
         }
       </ul>
+
+      <button onClick={()=> dispatch(getPokemons(nextPage))} >
+        Next
+      </button>
     </>
   )
 }
