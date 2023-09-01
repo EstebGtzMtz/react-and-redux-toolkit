@@ -8,7 +8,7 @@ export const PokemonApp = () => {
 
   useEffect(() => {
     dispatch(getPokemons())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
