@@ -8,6 +8,5 @@ const myService = axios.create({
 
 export const getPokemonsFromAPI = async page => {
   const {data: {results}} = await myService.get(`pokemon?limit=10&offset=${page*10}`);
-  console.log(results)
-  return results
+  return results;
 }
